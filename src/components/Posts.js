@@ -83,30 +83,3 @@ export class Posts extends Component {
           );
     }
 }
-
-
-
-/*
-        return(
-            <Row xs={1} md={2} className="g-4">
-                {this.state.posts.map(item =>(
-                
-                    <Card key={item.id} bg="secondary" style={{ width: '18rem' }}>   
-                        <Avatar src={item.user.avatar} />
-                        <Card.Title>{item.title}</Card.Title>
-                        <p>{item.body.slice(0,70)}...</p>
-
-                        
-                            <Button variant="success" 
-                                    href={'post/' + item.id}  
-                            >
-                                    Post
-                            </Button>
-                    
-                        <Card.Footer >{item.user.name}</Card.Footer>
-                    </Card>
-                ))}
-            </Row>
-        )
-        
-        */
