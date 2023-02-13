@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Image } from 'react-bootstrap';
+import {Col, Container, Card, Row} from 'react-bootstrap';
 const UserProfile = () => {
   const [infoUsuario, setInfoUsuario] = useState({});
 
@@ -14,13 +15,21 @@ const UserProfile = () => {
   return (
     <div>
       {Object.keys(infoUsuario).length > 0 && (
-        <div>
-          <Image src={infoUsuario.avatar} roundedCircle />
-          <h2>User ID: {infoUsuario.id}</h2>
-          <h2>User Name: {infoUsuario.name}</h2>
-          <h2>User Email: {infoUsuario.email}</h2>
-          <h2>Link de github: {infoUsuario.link_portfolio}</h2>
-        </div>
+      <Container className="my-5">
+      <Row className="justify-content-center">
+        <Col xs={10} md={6}>
+          <Card className="text-center">
+            <Card.Img variant="top" src={infoUsuario.avatar} roundedCircle />
+            <Card.Body>
+              <Card.Title>User ID: {infoUsuario.id}</Card.Title>
+              <Card.Text>User Name: {infoUsuario.name}</Card.Text>
+              <Card.Text>User Email: {infoUsuario.email}</Card.Text>
+              <Card.Text>Link de github: {infoUsuario.link_portfolio}</Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+    </Container>
       )}
     </div>
   );

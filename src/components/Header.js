@@ -7,7 +7,7 @@ import UserHeader from "./userHeader";
 export const Header = ()=> {
 
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
       <Container>
         <Navbar.Brand href="/">ctrl-dev</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
