@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Avatar } from '@mui/material';
 
 const NewPost = () => {
   const [title, setTitle] = useState('');
@@ -29,23 +30,26 @@ const NewPost = () => {
   };
 
   return (
-    <div>
+    <div className="d-flex justify-content-center">
       {token ? (
-        <form onSubmit={handleSubmit}>
+        <div>
+        <form onSubmit={handleSubmit} className="form-group">
           <input
             type="text"
-            placeholder="Title"
+            placeholder="Titulo del Post"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
+            className="form-control"
           />
           <textarea
-            placeholder="Body"
+            placeholder="Cuéntanos"
             value={body}
             onChange={(e) => setBody(e.target.value)}
+            className="form-control"
           />
-          <button type="button" onClick={handleSubmit}>Create Post</button>
-
+          <button type="button" onClick={handleSubmit} className="btn btn-primary">Create Post</button>
         </form>
+        </div>
       ) : (
         <p>Please authenticate to create a new post.</p>
       )}
@@ -54,3 +58,38 @@ const NewPost = () => {
 };
 
 export default NewPost;
+
+
+/*
+
+  return (
+    <div className="tweetBox">
+      <form>
+        <div className="tweetBox__input">
+          <Avatar src="https://pbs.twimg.com/profile_images/1077133754345422848/v9k0AolD_400x400.jpg" />
+          <input
+            onChange={(e) => setTweetMessage(e.target.value)}
+            value={tweetMessage}
+            placeholder="What's happening?"
+            type="text"
+          />
+        </div>
+        <input
+          onChange={(e) => setTweetImage(e.target.value)}
+          value={tweetImage}
+          className="tweetBox__imageInput"
+          placeholder="Optional: Enter image URL"
+          type="text"
+        />
+
+        <Button
+          onClick={sendTweet}
+          type="submit"
+          className="tweetBox__tweetButton"
+        >
+          Tweet
+        </Button>
+      </form>
+    </div>
+  );
+*/
