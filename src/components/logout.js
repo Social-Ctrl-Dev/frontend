@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
 
 const Logout = () => {
   
@@ -9,9 +10,9 @@ const Logout = () => {
   };
 
   return (
-    <button onClick={handleClick}>
+    <Button onClick={handleClick}>
       Logout
-    </button>
+    </Button>
   );
 };
 
